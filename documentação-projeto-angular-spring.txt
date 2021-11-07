@@ -1,0 +1,61 @@
+-------------------------------Documentação projeto Angular-Spring----------------------------------------
+
+Passo 01; 
+	- verificar versão do node(este projeto foi feito com a versão v16.13.0):
+		node --version 
+	- verificar versão do angularCLI (este projeto foi feito com a versão 13.0.0):
+		ng --version
+	
+Passo 02:
+	- Criar o projeto;
+		ng new <nomde do projeto>
+	
+	- obs.: caso não crie o arquivo app-routing.module.ts realizar o seguinte comando:
+		ng new <nomde do projeto> --routing
+	
+	- Caso exija alguma confirmação ver a necessidade e selecionar o desejado
+	- Rodas o projeto e verificar se está tudo ok:
+		ng serve
+	
+Passo 03:
+	- Adicionar o angular material ao projeto (linkdoc: https://material.angular.io/):
+		ng add @angular/material
+		
+	- Obs: caso o comando acima não funcione, tentar pelo npm com o comando abaixo:
+		npm install --save @angular/material @angular/cdk @angular/animations
+		
+		ng add @angular/material
+		
+Passo 04:
+	- Adicionando toolbar;
+		adicionar no arquivo app.module.ts a seguinte importação:
+		 -- import { MatToolbarModule } from '@angular/material/toolbar';
+		
+		adicionar nos imports do arquivo app.module.ts:
+		 -- MatToolbarModule
+   
+    - Pegar um exemplo do https://material.angular.io/ e adicionar o html no arquivo app.component.html(apagar todo o conteúdo do arquivo app.component.html):
+		Exemplo simples:
+			<mat-toolbar>
+				<span>My Application</span>
+			</mat-toolbar>
+			
+Passo 05:
+	- Adicionando módulos e componentes:
+		ng g m <nome do módulo>
+		obs: g(signigica generate) e m(siginifica module)
+		
+	** - Para adicionar módulos com roteamento:
+		ng g m <nome do módulo> --routing
+	
+	- Dentro do módulo courses adicionar o componente courses:
+		ng g c <nome do modulo>/<nome do componente>
+		
+Passo 06:
+	- No arquivo de rotas courses-routing.module.ts, adicionar a rota para o componente CousesComponent criado no passo anterior:
+		Exemplo de como deve ficar o trecho das rotas no arquivo courses-routing.module.ts:
+		````
+			const routes: Routes = [
+				{ path: '', component: CoursesComponent }
+			];
+		````

@@ -80,3 +80,24 @@ Passo 07:
 
 	- Ajustar o arquivo courses.component.html para que fique de acordo com as variáveis criadas no arquivo courses.component.ts
 		Observação: deve ser obedecida a nomenclatura das variáveis da interface e do arquivo courses.component.ts
+
+
+Passo 08:
+	- Adicionando um card do angular material
+		No arquivo courses.module.ts e no array de importes do mesmo arquivo adicionar a importação:
+			import {MatCardModule} from '@angular/material/card';
+	- Adicionar a tag de card simples:
+		<mat-card>Simple card</mat-card>
+	- Inserir toda a tabela dentro da tag do card criada no item anterior
+	- Iserir um toolbar acima da tabela dentro da tag <mat-card>
+
+Passo 09:
+	- Criando módulo para compartilhar as importações:
+		ng g m shared/app-material
+	
+	- No arquivo app-material.module.ts apagar o array de imports e declarations e ainda apagar a importação do CommonModule;
+	- Copiar as importações utilizadas no arquivo courses.module.ts e adicionar no array de exports dentro do @NgModule;
+
+	- Apagar as importações do arquivo courses.module.ts que foram para o arquivo app-material.module.ts e adicionar somente a importação:
+		import { AppMaterialModule } from '../shared/app-material/app-material.module';
+	- No array de imports adicionar o AppMaterialModule

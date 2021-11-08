@@ -59,3 +59,24 @@ Passo 06:
 				{ path: '', component: CoursesComponent }
 			];
 		````
+
+Passo 07: 
+	- Adicionando uma tabela para exibição dos dados com Angular Material:
+		- Acessando o link https://material.angular.io/components/table/overview deve ser copiado a importação para tabelas dentro do arquivo "courses.module.ts"
+			import {MatTableModule} from '@angular/material/table';
+		- Ainda no arquivo courses.module.ts adicionar no array de imports:
+			MatTableModule
+
+	- No arquivo courses.component.ts, adicionar um vetor para receber os dados que serão exibidos na tabela:
+		Exemplo: courses: any[] = [];
+
+	- Criar uma pasta courses/model
+	- Gerar uma interface para ser utlizada na tabela e nela definir os dados do modelo para exibição na tabela:
+		ng g interface courses/model/course
+	- Após gerar a interface o exemplo do array "courses" criado acima ficará da seguinte forma:
+		courses: Course[] = [];
+		Observação: no exemplo acima o array está sendo inicializada, pois é obrigado realizar a inicialização;
+		Observação: outra forma de inicializar o array é dentro do construtor;
+
+	- Ajustar o arquivo courses.component.html para que fique de acordo com as variáveis criadas no arquivo courses.component.ts
+		Observação: deve ser obedecida a nomenclatura das variáveis da interface e do arquivo courses.component.ts

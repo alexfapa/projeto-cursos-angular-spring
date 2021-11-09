@@ -119,3 +119,7 @@ Passo 10:
 		   @include angular-material-theme($custom-theme);
 		   
 		```
+
+Passo 11:
+	- Adicionando serviços ao projeto:
+		ng g s <nome do serviço>(pode conter o caminho de onde se pretende criar o serviço)

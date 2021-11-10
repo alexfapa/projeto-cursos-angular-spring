@@ -1,5 +1,7 @@
 [
   { "_id": "1", "name": "Spring Boot", "category": "Back-end"},
   { "_id": "2", "name": "Angular", "category": "Front-end"},
-  { "_id": "3", "name": "Docker", "category": "DevOps"}
+  { "_id": "3", "name": "Docker", "category": "DevOps"},
+  { "_id": "4", "name": "Php Laravel", "category": "Back-end"},
+  { "_id": "5", "name": "React", "category": "Front-end"}
 ]

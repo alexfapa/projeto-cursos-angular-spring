@@ -129,3 +129,8 @@ Passo 12(criação de componentes compartilhados):
 		ng g m shared
 	- Adicionando ao /shared o compomente compartilhado de erros:
 		ng g c shared/components/error-dialog
+		
+Passo 13 (gerando pipes):
+	- Gerando pipe na pasta compartilhada /shared:
+		ng g pipe shared/pipes/category
+		

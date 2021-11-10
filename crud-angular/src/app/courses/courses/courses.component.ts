@@ -16,7 +16,7 @@ export class CoursesComponent implements OnInit {
 
   //variável renomeado para obedecer a padronização
   courses$: Observable<Course[]>;
-  displayedColumns = ['_id','name', 'category']; //define quais campos vão ser exibidos do array
+  displayedColumns = ['_id','name', 'category']; //define quais campos do array  vão ser exibidos na tela
 
   //abaixo há uma injeção de dependência
   constructor(

@@ -123,3 +123,9 @@ Passo 10:
 Passo 11:
 	- Adicionando serviços ao projeto:
 		ng g s <nome do serviço>(pode conter o caminho de onde se pretende criar o serviço)
+		
+Passo 12(criação de componentes compartilhados):
+	- Adicionando um módulo shared:
+		ng g m shared
+	- Adicionando ao /shared o compomente compartilhado de erros:
+		ng g c shared/components/error-dialog

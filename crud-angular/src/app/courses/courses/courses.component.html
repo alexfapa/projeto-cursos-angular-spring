@@ -1,30 +1,36 @@
 <mat-card>
-  <mat-toolbar color="primary">
-    Cursos Disponíveis
-  </mat-toolbar>
-<table mat-table [dataSource]="courses" class="mat-elevation-z8">
+  <mat-toolbar color="primary"> Cursos Disponíveis </mat-toolbar>
 
+  <!-- No trecho de código abaixo, o ngIf testa se a variável courses possui dados caso possua renomeia para courses -->
+  <!-- O else referencia uma variável loading que está na tag ng-template que é uma tag oculta do angular só mostrada caso o else seja satisfeito -->
+  <div *ngIf="courses$ | async as courses; else loading">
+    <table mat-table [dataSource]="courses" class="mat-elevation-z8">
+      <!-- Id Column -->
+      <ng-container matColumnDef="_id">
+        <th mat-header-cell *matHeaderCellDef>#</th>
+        <td mat-cell *matCellDef="let course">{{ course._id }}</td>
+      </ng-container>
 
-<!-- Id Column -->
-<ng-container matColumnDef="_id">
-  <th mat-header-cell *matHeaderCellDef> # </th>
-  <td mat-cell *matCellDef="let course"> {{ course._id }} </td>
-</ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let course">{{ course.name }}</td>
+      </ng-container>
 
+      <!-- Category Column -->
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef>Categoria</th>
+        <td mat-cell *matCellDef="let course">{{ course.category }}</td>
+      </ng-container>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Nome </th>
-    <td mat-cell *matCellDef="let course"> {{ course.name }} </td>
-  </ng-container>
-
-  <!-- Category Column -->
-  <ng-container matColumnDef="category">
-    <th mat-header-cell *matHeaderCellDef> Categoria </th>
-    <td mat-cell *matCellDef="let course"> {{ course.category }} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  <!-- a tag abaixo referencia a variável criada na div do ngIf referenciado pelo else deve obrigatoriamente conter o # para referenciá-la -->
+  <ng-template #loading>
+    <div class="loading-spinner">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
 </mat-card>
